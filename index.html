@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RA</title>
+
+    <style>
+        body {
+            background-color: #ffffff
+        }
+
+        /* Place the navbar at the bottom of the page, and make it stick */
+        .navbar {
+            background-color: #ffffff;
+            overflow: hidden;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 10%;
+            min-height: 55px;
+            display: flex;
+            justify-content: space-around;
+            border-top: 0.6px solid #aaaaaa;
+
+        }
+
+        /* Style the links inside the navigation bar */
+        .navbar a {
+
+            color: #bcbcbc;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+
+        }
+
+        /* Change the color of links on hover */
+        .navbar a:active {
+            color: #747474;
+            border: 0;
+            outline: none;
+
+        }
+
+        .navbar a:focus {
+            outline: none;
+        }
+
+
+        .navbar img {
+
+            max-width: 160px;
+        }
+
+        .navbar img:active {
+
+            transform: scale(0.85);
+        }
+
+        .rounded {
+            counter-reset: li;
+            list-style: none;
+            font: 20px "Trebuchet MS", "Lucida Sans";
+            padding: 0;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+            margin-top: 15%;
+        }
+
+        .rounded a {
+            position: relative;
+            display: block;
+            padding: 2.4em 2.4em 2.4em 3em;
+            margin: .8em 0;
+            background: white;
+
+            opacity: 1;
+            color: #444;
+            text-decoration: none;
+            border-radius: .3em;
+            transition: .3s ease-out;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+
+
+        #news {
+            background-image: url(img/iStock-949118068.png);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        #news:active {
+            transform: scale(0.95);
+        }
+
+        #webinars {
+            background-image: url(img/besplatno.png);
+            background-position: center;
+            background-size: cover;
+        }
+
+        #videos {
+            background-image: url(img/brickwall-youtube-logo-brands.png);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .activeBar {
+            filter: brightness(45%);
+        }
+
+        .booksPage1 {
+
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+
+
+        }
+
+        .booksPage1 a {}
+
+        .booksPage1 img {
+            border-radius: 40px;
+            opacity: 0.4;
+            padding: 10px;
+            width: 80%;
+            max-width: 250px;
+
+
+        }
+
+        .hiddenPage {
+            display: none;
+        }
+
+        .booksPage {
+            counter-reset: li;
+            list-style: none;
+            font: 20px "Trebuchet MS", "Lucida Sans";
+            padding: 20px;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+            margin-top: 0;
+        }
+
+        .booksPage a {
+            position: relative;
+            display: block;
+            padding: 9.4em 2.4em 2.4em 3em;
+            margin: 2em 0;
+            background: white;
+
+            opacity: 1;
+            color: #444;
+            text-decoration: none;
+            border-radius: 1.8em;
+            transition: .3s ease-out;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #hand {
+            background-image: url(img/boo1.png);
+            background-position: center;
+            background-size: cover;
+            background-color: rgba(255,255,255,0.5);
+
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <ul class="rounded" id="page1">
+        <li><a id="news" href="#">Новинки</a></li>
+        <li><a id="webinars" href="#">Вебинары и статьи</a></li>
+        <li><a id="videos" href="#">Видео-курсы</a></li>
+    </ul>
+
+    <div class="booksPage" id="page2">
+        <a id="hand" href="#">Text</a>
+        <a href="#">text</a>
+    </div>
+
+    <div id="page3">
+        Tri
+    </div>
+
+    <div id="page4">
+        Chetyre
+    </div>
+
+    <div class="navbar">
+        <a id="home" onclick="showPage('page1')" href="#"><img src="img/home-page.png" alt="1" width="25%"></a>
+        <a id="books" onclick="showPage('page2')" href="#"><img src="img/book.png" alt="1" width="25%"></a>
+        <a onclick="showPage('page3')" id="settings" href="#"><img src="img/gear.png" alt="1" width="25%"></a>
+        <a onclick="showPage('page4')" id="kek" href="#"><img src="img/gear.png" alt="1" width="25%"></a>
+
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            if (pageId == "page1") {
+                page1.className = "rounded";
+                page2.className = "hiddenPage";
+                page3.className = "hiddenPage";
+                page4.className = "hiddenPage";
+                home.className = "activeBar";
+                books.className = "";
+                settings.className = "";
+                kek.className = "";
+
+
+            }
+            if (pageId == "page2") {
+                page1.className = "hiddenPage";
+                page2.className = "booksPage";
+                page3.className = "hiddenPage";
+                page4.className = "hiddenPage";
+                home.className = "";
+                books.className = "activeBar";
+                settings.className = "";
+                kek.className = "";
+            }
+            if (pageId == "page3") {
+                page1.className = "hiddenPage";
+                page2.className = "hiddenPage";
+                page3.className = "hiddenPage";
+                page4.className = "hiddenPage";
+                home.className = "";
+                books.className = "";
+                settings.className = "activeBar";
+                kek.className = "";
+            }
+            if (pageId == "page4") {
+                page1.className = "hiddenPage";
+                page2.className = "hiddenPage";
+                page3.className = "hiddenPage";
+                page4.className = "hiddenPage";
+                home.className = "";
+                books.className = "";
+                settings.className = "";
+                kek.className = "activeBar";
+            }
+
+        }
+        showPage("page1");
+
+    </script>
+</body>
+
+</html>
